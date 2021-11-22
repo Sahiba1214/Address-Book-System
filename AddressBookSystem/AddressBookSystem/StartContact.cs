@@ -1,53 +1,83 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AddressBookSystem
 {
-    class AddressBook
+    class Program
     {
-        List<Contact> addressList = new List<Contact>();
-        public void AddContact(Contact contact) // This Method Will Add the Details of Customer
+        Contact contact = new Contact();
+        static void Main(string[] args)
         {
-            addressList.Add(contact);
-        }
-        public void Display() // This Method wii Display the Details
-        {
-            foreach (var contact in addressList)
+            bool flag = true;
+            while (flag)
             {
-                Console.WriteLine(contact.FirstName + " " + contact.LastName);
-                Console.WriteLine("Last Name: " + contact.LastName);
-                Console.WriteLine("Address : " + contact.Address);
-                Console.WriteLine("City : " + contact.City);
-                Console.WriteLine("State : " + contact.State);
-                Console.WriteLine("Zip : " + contact.Zip);
-                Console.WriteLine("PhoneNumber : " + contact.PhoneNumber);
-                Console.WriteLine("Email : " + contact.Email);
-            }
-        }
-        public void EditContact(string name)
-        {
-            foreach (var contact in addressList)
-            {
-                if (contact.FirstName == name || contact.LastName == name)
+                Console.WriteLine("Enter your Choice Number to Execute the Address Program Press- 1-Contacts, 2-Add Contact, 3-Edit Contact, 4-Delete Contact, 5-Exit");
+                int choice = Convert.ToInt32(Console.ReadLine());
+                switch (choice)
                 {
-                    Console.WriteLine("What is Required to be Edited");
+                    case 1:
+                        Console.WriteLine("Enter the Contact Information in Format of FirstName, LastName, Addr, City, State, Zip, Ph.No, Email.");
+                        Contact newContact = new Contact();
+                        newContact.FirstName = Console.ReadLine();
+                        newContact.LastName = Console.ReadLine();
+                        newContact.Address = Console.ReadLine();
+                        newContact.City = Console.ReadLine();
+                        newContact.State = Console.ReadLine();
+                        newContact.Zip = Console.ReadLine();
+                        newContact.PhoneNumber = Console.ReadLine();
+                        newContact.Email = Console.ReadLine();
+                        break;
+                    case 2:
+                        Console.WriteLine("Enter the Contact Information to be Add in form of FirstName, LastName, Addr, City, State, Zip, Ph.No, Email.");
+                        Console.WriteLine("Enter the Contact to be Add: ");
+                        Contact contact = new Contact();
+                        AddressBook addressBook = new AddressBook();
+                        addressBook.AddContact(contact);
+                        contact.FirstName = Console.ReadLine();
+                        contact.LastName = Console.ReadLine();
+                        contact.Address = Console.ReadLine();
+                        contact.City = Console.ReadLine();
+                        contact.State = Console.ReadLine();
+                        contact.Zip = Console.ReadLine();
+                        contact.PhoneNumber = Console.ReadLine();
+                        contact.Email = Console.ReadLine();
+                        addressBook.Display();
+                        break;
+                    case 3:
+                        Console.WriteLine("Enter the Contact Name to be Edited: ");
+                        string name = Console.ReadLine();
+                        AddressBook ab = new AddressBook();
+                        ab.EditContact(name);
+                        ab.Display();
+                        break;
+                    case 4:
+                        Console.WriteLine("Enter the Contact Name to be Deleted: ");
+                        string user = Console.ReadLine();
+                        AddressBook abb = new AddressBook();
+                        abb.DeleteContact(user);
+                        abb.Display();
+                        break;
+                    case 5:
+                        Console.WriteLine("Enter the Contact Information to be Add in form of FirstName, LastName, Addr, City, State, Zip, Ph.No, Email.");
+                        Console.WriteLine("Enter the Contact to be Add: ");
+                        Contact con = new Contact();
+                        AddressBook abo = new AddressBook();
+                        abo.AddContact(con);
+                        con.FirstName = Console.ReadLine();
+                        con.LastName = Console.ReadLine();
+                        con.Address = Console.ReadLine();
+                        con.City = Console.ReadLine();
+                        con.State = Console.ReadLine();
+                        con.Zip = Console.ReadLine();
+                        con.PhoneNumber = Console.ReadLine();
+                        con.Email = Console.ReadLine();
+                        abo.Display();
+                        break;
+                    case 6:
+                        flag = false;
+                        break;
                 }
             }
-        }
 
-        public void DeleteContact(string user) // This Method Will Delete Particular Contact Detail Provided by User
-        {
-            Contact delete = new Contact();
-            foreach (var contact in addressList)
-            {
-                if (contact.FirstName == user || contact.LastName == user)
-                {
-                    addressList.Remove(contact);
-                }
-            }
         }
     }
 }
-
-
