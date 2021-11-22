@@ -35,6 +35,18 @@ namespace AddressBookSystem
                 }
             }
         }
+
+        public void DeleteContact(string user) // This Method Will Delete Particular Contact Detail Provided by User
+        {
+            Contact delete = new Contact();
+            foreach (var contact in addressList)
+            {
+                if (contact.FirstName == user || contact.LastName == user)
+                {
+                    addressList.Remove(contact);
+                }
+            }
+        }
     }
 }
 
