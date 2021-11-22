@@ -4,15 +4,26 @@ using System.Text;
 
 namespace AddressBookSystem
 {
-    class StartContact // This Model Class is Only Responisible for Changing Purpose
+    class AddressBook
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Address { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
-        public string Zip { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Email { get; set; }
+        List<Contact> addressList = new List<Contact>();
+        public void AddContact(Contact contact) // This Method Will Add the Details of Customer
+        {
+            addressList.Add(contact);
+        }
+        public void Display() // This Method wii Display the Details
+        {
+            foreach (var contact in addressList)
+            {
+                Console.WriteLine(contact.FirstName + " " + contact.LastName);
+                Console.WriteLine("Last Name: " + contact.LastName);
+                Console.WriteLine("Address : " + contact.Address);
+                Console.WriteLine("City : " + contact.City);
+                Console.WriteLine("State : " + contact.State);
+                Console.WriteLine("Zip : " + contact.Zip);
+                Console.WriteLine("PhoneNumber : " + contact.PhoneNumber);
+                Console.WriteLine("Email : " + contact.Email);
+            }
+        }
     }
 }
