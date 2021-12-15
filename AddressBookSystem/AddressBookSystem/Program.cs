@@ -103,6 +103,26 @@ namespace AddressBookSystem
                         }
                         break;
                     case 9:
+                        break;
+                    case 10:
+                        Console.WriteLine("Enter input 1 for City and 2 for State");
+                        int res = Convert.ToInt32(Console.ReadLine());
+                        if (res == 1)
+                        {
+                            addressBook.CityCount();
+                            break;
+                        }
+                        if (res == 2)
+                        {
+                            addressBook.StateCount();
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Enter correct input");
+                        }
+                        break;
+                    case 11:
                         flag = false;
                         break;
                 }
