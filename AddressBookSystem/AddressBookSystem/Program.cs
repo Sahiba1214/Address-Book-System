@@ -85,6 +85,24 @@ namespace AddressBookSystem
                         addressBook.CheckDuplicateEntry();
                         break;
                     case 8:
+                        Console.WriteLine("Enter input 1 for City and 2 for State");
+                        int result = Convert.ToInt32(Console.ReadLine());
+                        if (result == 1)
+                        {
+                            addressBook.CityList();
+                            break;
+                        }
+                        if (result == 2)
+                        {
+                            addressBook.StateList();
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Enter correct input");
+                        }
+                        break;
+                    case 9:
                         flag = false;
                         break;
                 }
