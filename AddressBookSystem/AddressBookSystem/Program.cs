@@ -4,7 +4,7 @@ namespace AddressBookSystem
 {
     class Program
     {
-        private static readonly object AddressBook;
+        private static object addressBook;
 
         static void Main(string[] args)
         {
@@ -52,7 +52,14 @@ namespace AddressBookSystem
                         AddressBook.EditContact(name);
                         AddressBook.Display();
                         break;
+                        break;
                     case 4:
+                        Console.WriteLine("Enter the Contact Name to be deleted : ");
+                        string detail = Console.ReadLine();
+                        AddressBook.DeleteContact(detail);
+                        AddressBook.Display();
+                        break;
+                    case 5:
                         flag = false;
                         break;
                 }
