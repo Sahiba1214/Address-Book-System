@@ -4,7 +4,7 @@ namespace AddressBookSystem
 {
     class Program
     {
-        private static object AddressBook;
+        private static readonly object AddressBook;
 
         static void Main(string[] args)
         {
@@ -47,6 +47,12 @@ namespace AddressBookSystem
                         AddressBook.Display();
                         break;
                     case 3:
+                        Console.WriteLine("Enter the Contact Name to be Edited: ");
+                        string name = Console.ReadLine();
+                        AddressBook.EditContact(name);
+                        AddressBook.Display();
+                        break;
+                    case 4:
                         flag = false;
                         break;
                 }
