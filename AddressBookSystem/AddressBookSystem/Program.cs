@@ -60,10 +60,31 @@ namespace AddressBookSystem
                         AddressBook.Display();
                         break;
                     case 5:
+                        Console.WriteLine("Enter the Contact Information to be Add in form of FirstName, LastName, Addr, City, State, Zip, Ph.No, Email.");
+                        contact = new Contact()
+                        {
+                            FirstName = Console.ReadLine(),
+                            LastName = Console.ReadLine(),
+                            Address = Console.ReadLine(),
+                            City = Console.ReadLine(),
+                            State = Console.ReadLine(),
+                            Zip = Console.ReadLine(),
+                            PhoneNumber = Console.ReadLine(),
+                            Email = Console.ReadLine(),
+                        };
+                        addressBook.AddContact(contact);
+                        addressBook.Display();
+                        break;
+                    case 6:
+                        Console.WriteLine("Enter the Unique Contact to be added: ");
+                        string unique = Console.ReadLine();
+                        addressBook.AddUniqueContact(unique);
+                        addressBook.DisplayUniqueContacts();
+                        break;
+                    case 7:
                         flag = false;
                         break;
                 }
             }
         }
     }
-}
