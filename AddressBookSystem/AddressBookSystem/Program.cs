@@ -123,6 +123,9 @@ namespace AddressBookSystem
                         }
                         break;
                     case 11:
+                        addressBook.AddressBookSorting();
+                        break;
+                    case 12:
                         flag = false;
                         break;
                 }
