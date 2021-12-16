@@ -125,11 +125,14 @@ namespace AddressBookSystem
                     case 11:
                         addressBook.AddressBookSorting();
                         break;
+                  
                     case 12:
+                        addressBook.SortBy();
+                        break;
+                    case 13:
                         flag = false;
                         break;
                 }
             }
         }
     }
-}
