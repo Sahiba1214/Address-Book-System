@@ -206,5 +206,23 @@ namespace AddressBookSystem
                         break;
                 }
             }
+            public void ReadFile()
+            {
+                Console.WriteLine("The Contact details in the file after reading : ");
+                string filePath = @"F:\Address\Address-Book-System\AddressBookSystem\AddressBookSystem\File\File.txt";
+                string text = File.ReadAllText(filePath);
+                Console.WriteLine(text);
+            }
+            public void WriteUsingStreamWriter()
+            {
+                Console.WriteLine("The Contact details in the file after writing : ");
+                String filePath = @"F:\Address\Address-Book-System\AddressBookSystem\AddressBookSystem\File\File.txt";
+                using (StreamWriter writer = File.AppendText(filePath))
+                {
+                    writer.WriteLine("\nSNN : 2217797");
+                    writer.Close();
+                    Console.WriteLine(File.ReadAllText(filePath));
+                }
+            }
         }
     }

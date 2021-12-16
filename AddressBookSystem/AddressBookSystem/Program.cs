@@ -130,9 +130,14 @@ namespace AddressBookSystem
                         addressBook.SortBy();
                         break;
                     case 13:
+                        addressBook.ReadFile();
+                        addressBook.WriteUsingStreamWriter();
+                        break;
+                    case 14:
                         flag = false;
                         break;
                 }
             }
         }
     }
+}

@@ -1,0 +1,11 @@
+﻿9 lines (9 sloc)  185 Bytes
+   
+﻿FirstName : Sahiba
+LastName : Fatma
+Address : Bangra
+PhoneNumber : 7004830003
+EmailId : sahiba1214@gmail.com
+City : Muzaffarpur
+State : Bihar
+ZIP : 8420002
+SNN : 2217797
